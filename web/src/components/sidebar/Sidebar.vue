@@ -1,8 +1,8 @@
 <template>
   <div class="sidebar">
     <div class="sidebar-wrapper">
-      <slot></slot>
-      <ul class="nav">
+      <div class="sidebar-title">Apps</div>
+      <div class="sidebar-menu">
         <slot name="links">
           <sidebar-link
             v-for="(link, index) in sidebarLinks"
@@ -13,7 +13,7 @@
           >
           </sidebar-link>
         </slot>
-      </ul>
+      </div>
     </div>
   </div>
 </template>

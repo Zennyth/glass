@@ -1,6 +1,12 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link>
+  <div class="video-bg">
+    <video width="320" height="240" autoplay loop muted>
+      <source
+        src="https://assets.codepen.io/3364143/7btrrd.mp4"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
   </div>
-  <router-view/>
+  <router-view />
 </template>

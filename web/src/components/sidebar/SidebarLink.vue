@@ -2,14 +2,14 @@
   <component
     :is="tag"
     @click="hideSidebar"
-    class="nav-item"
+    class="sidebar-link"
     v-bind="$attrs"
     tag="li"
   >
-    <a class="nav-link">
+    <a>
       <slot>
-        <i v-if="icon" :class="icon"></i>
-        <p>{{ name }}</p>
+        <fa v-if="icon" :icon="icon"></fa>
+        <span>{{ name }}</span>
       </slot>
     </a>
   </component>
@@ -31,7 +31,7 @@ export default {
   },
   props: {
     name: String,
-    icon: String,
+    icon: [String, Array],
     tag: {
       type: String,
       default: "router-link",
