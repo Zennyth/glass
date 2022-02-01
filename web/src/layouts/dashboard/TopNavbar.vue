@@ -1,12 +1,21 @@
 <template>
   <div class="header">
-    <div class="header-circle"></div>
-    <div class="header-menu">
-      <a class="menu-link is-active" href="#">Apps</a>
-      <a class="menu-link notify" href="#">Your work</a>
-      <a class="menu-link" href="#">Discover</a>
-      <a class="menu-link notify" href="#">Market</a>
+    <div
+      class="header-toggle d-inline"
+      :class="{ toggled: showSidebar }"
+    >
+      <div
+        type="button"
+        class="navbar-toggler"
+        aria-label="Navbar toggle button"
+        @click="toggleSidebar"
+      >
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </div>
     </div>
+    <div class="header-circle"></div>
     <div class="header-search">
       <input type="text" placeholder="Search" />
     </div>
@@ -41,5 +50,27 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+    }
+  },
+  methods: {
+    toggleSidebar() {
+      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
+      console.log(this.$sidebar)
+    }
+  },
+  computed: {
+    showSidebar() {
+      console.log("hello")
+      return this.$sidebar.showSidebar
+    }
+  },
+  watch: {
+    '$sidebar.showSidebar'(value) {
+      console.log(value)
+    }
+  }
+};
 </script>

@@ -112,7 +112,7 @@
       }
     }
   }
-  
+
   .profile-img {
     width: 32px;
     height: 32px;
@@ -121,5 +121,48 @@
     border: 2px solid var(--theme-color);
     margin-left: 22px;
   }
-}
 
+  &-toggle {
+    .navbar-toggler {
+      background-color: transparent;
+      cursor: pointer;
+
+      & .toggled .navbar-toggler-bar {
+        width: 24px;
+
+        & + .navbar-toggler-bar {
+          margin-top: 5px;
+        }
+      }
+    }
+
+    .navbar-toggler-bar {
+      display: block;
+      position: relative;
+      width: 22px;
+      height: 1px;
+      border-radius: 1px;
+      background: var(--theme-color);
+
+      &.navbar-kebab {
+        height: 4px;
+        width: 4px;
+        margin-bottom: 3px;
+        border-radius: 50%;
+      }
+
+      & + .navbar-toggler-bar {
+        margin-top: 7px;
+      }
+
+      & + .navbar-toggler-bar.navbar-kebab {
+        margin-top: 0px;
+      }
+
+      &.bar2 {
+        width: 17px;
+        transition: width 0.2s linear;
+      }
+    }
+  }
+}
