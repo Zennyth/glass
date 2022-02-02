@@ -1,19 +1,11 @@
 <template>
   <div class="header">
     <div
-      class="header-toggle d-inline"
+      class="menu__btn"
       :class="{ toggled: showSidebar }"
+      @click="toggleSidebar"
     >
-      <div
-        type="button"
-        class="navbar-toggler"
-        aria-label="Navbar toggle button"
-        @click="toggleSidebar"
-      >
-        <span class="navbar-toggler-bar bar1"></span>
-        <span class="navbar-toggler-bar bar2"></span>
-        <span class="navbar-toggler-bar bar3"></span>
-      </div>
+      <span></span>
     </div>
     <div class="header-circle"></div>
     <div class="header-search">
@@ -52,25 +44,18 @@
 <script>
 export default {
   data() {
-    return {
-    }
+    return {};
   },
   methods: {
     toggleSidebar() {
-      this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
-      console.log(this.$sidebar)
-    }
+      this.$store.dispatch("updateSidebar", !this.showSidebar);
+      // this.$sidebar.displaySidebar(!this.$sidebar.showSidebar);
+    },
   },
   computed: {
     showSidebar() {
-      console.log("hello")
-      return this.$sidebar.showSidebar
-    }
+      return this.$store.getters["isVisible"];
+    },
   },
-  watch: {
-    '$sidebar.showSidebar'(value) {
-      console.log(value)
-    }
-  }
 };
 </script>

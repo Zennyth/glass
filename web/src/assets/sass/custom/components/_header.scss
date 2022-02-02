@@ -164,5 +164,13 @@
         transition: width 0.2s linear;
       }
     }
+
+    & .toggled .navbar-toggler-bar{
+      width: 24px;
+
+      & + .navbar-toggler-bar{
+          margin-top: 5px;
+      }
+  }
   }
 }

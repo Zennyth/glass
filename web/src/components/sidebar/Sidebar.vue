@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="sidebar" :class="{visible: isVisible}">
     <div class="sidebar-wrapper">
       <div class="sidebar-title">Apps</div>
       <div class="sidebar-menu">
@@ -52,6 +52,9 @@ export default {
         .join("")
         .toUpperCase();
     },
+    isVisible() {
+      return this.$store.getters["isVisible"]
+    }
   },
   data() {
     return {
