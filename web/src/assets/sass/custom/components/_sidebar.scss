@@ -1,17 +1,41 @@
-.sidebar {
-  border-right: 1px solid var(--border-color);
-  overflow: auto;
-  flex-shrink: 0;
-  width: 0;
-  
-  &.visible {
-    flex-basis: 240px;
-    padding: 26px;
+@mixin transform-translate-x($value) {
+  -webkit-transform: translate3d($value, 0, 0);
+  -moz-transform: translate3d($value, 0, 0);
+  -o-transform: translate3d($value, 0, 0);
+  -ms-transform: translate3d($value, 0, 0);
+  transform: translate3d($value, 0, 0);
+}
+
+@mixin transition($transition...) {
+  @if length($transition) == 0 {
+    transition: $transition-base;
+  } @else {
+    transition: $transition;
   }
 
-  @media screen and (max-width: 945px) {
-    display: none;
+  @media screen and (prefers-reduced-motion: reduce) {
+    transition: none;
   }
+}
+
+.sidebar {
+  border-right: 1px solid var(--border-color);
+  position: fixed;
+  display: block;
+  height: 100%;
+  width: 260px;
+  right: auto;
+  left: 0;
+  margin: 0;
+  border-radius: 0;
+  z-index: 1032;
+  visibility: visible;
+  overflow-y: visible;
+
+  transition: all 0.35s;
+
+  flex-basis: 240px;
+  padding: 26px;
 
   &-title {
     color: var(--inactive-color);
@@ -50,5 +74,61 @@
   svg {
     width: 16px;
     margin-right: 8px;
+  }
+}
+
+@media screen and (max-width: $lg) {
+  .sidebar {
+    @include transition(0.5s cubic-bezier(0.685, 0.0473, 0.346, 1));
+    @include transform-translate-x(-260px);
+  }
+
+  .content {
+    @include transition(0.5s cubic-bezier(0.685, 0.0473, 0.346, 1));
+    @include transform-translate-x(0px);
+
+    min-height: max-content;
+  }
+
+  .content {
+    width: 100%;
+  }
+
+  .nav-open {
+
+    .sidebar {
+      @include transform-translate-x(0px);
+    }
+
+    .content {
+      @include transform-translate-x(260px);
+    }
+
+    body {
+      position: relative;
+      overflow-x: hidden;
+    }
+  }
+
+  .menu-on-right {
+    .sidebar {
+      left: auto;
+      right: 0;
+      @include transform-translate-x(260px);
+    }
+  }
+
+  #bodyClick {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    opacity: 1;
+    top: 0;
+    right: 0;
+    left: 260px;
+    content: "";
+    z-index: 9999;
+    overflow-x: hidden;
+    background-color: transparent;
   }
 }

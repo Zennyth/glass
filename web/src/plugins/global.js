@@ -1,5 +1,8 @@
 import SideBar from "@/components/sidebar";
 
+// globals components
+import { BaseButton, Card } from "@/components/index";
+
 // css assets
 import "@/assets/sass/glass.scss";
 
@@ -12,6 +15,9 @@ library.add(fas);
 export default {
   install(app) {
     app.use(SideBar);
-    app.component('fa', FontAwesomeIcon)
+    app.component('fa', FontAwesomeIcon);
+
+    app.component(BaseButton.name, BaseButton);
+    app.component(Card.name, Card);
   }
 }

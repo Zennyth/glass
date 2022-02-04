@@ -7,10 +7,6 @@
     >
       <span></span>
     </div>
-    <div class="header-circle"></div>
-    <div class="header-search">
-      <input type="text" placeholder="Search" />
-    </div>
     <div class="header-profile">
       <div class="notification">
         <span class="notification-number">3</span>

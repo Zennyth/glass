@@ -32,6 +32,7 @@ export default {
   props: {
     name: String,
     icon: [String, Array],
+    group: String,
     tag: {
       type: String,
       default: "router-link",

@@ -53,15 +53,16 @@ img {
 }
 
 .wrapper {
-  display: flex;
-  flex-grow: 1;
-  overflow: hidden;
+  position: relative;
+  top: 0;
+  height: 100vh;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
+  width: calc(100vw - 260px);
+  height: inherit;
+  right: 0;
+  float: right;
 }
 
 .content-wrapper {
@@ -73,38 +74,38 @@ img {
   overflow: auto;
   background-color: var(--theme-bg-color);
   @media screen and (max-width: 510px) {
-   padding: 20px;
+    padding: 20px;
   }
   &-header {
-   display: flex;
-   align-items: center;
-   width: 100%;
-   justify-content: space-between;
-   background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
-    linear-gradient(
-     to right top,
-     #cf4af3,
-     #e73bd7,
-     #f631bc,
-     #fd31a2,
-     #ff3a8b,
-     #ff4b78,
-     #ff5e68,
-     #ff705c,
-     #ff8c51,
-     #ffaa49,
-     #ffc848,
-     #ffe652
-    );
-   border-radius: 14px;
-   padding: 20px 40px;
-   @media screen and (max-width: 415px) {
-    padding: 20px;
-   }
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    background-image: url("https://www.transparenttextures.com/patterns/cubes.png"),
+      linear-gradient(
+        to right top,
+        #cf4af3,
+        #e73bd7,
+        #f631bc,
+        #fd31a2,
+        #ff3a8b,
+        #ff4b78,
+        #ff5e68,
+        #ff705c,
+        #ff8c51,
+        #ffaa49,
+        #ffc848,
+        #ffe652
+      );
+    border-radius: 14px;
+    padding: 20px 40px;
+    @media screen and (max-width: 415px) {
+      padding: 20px;
+    }
   }
   &.overlay {
-   pointer-events: none;
-   transition: 0.3s;
-   background-color: var(--overlay-bg);
+    pointer-events: none;
+    transition: 0.3s;
+    background-color: var(--overlay-bg);
   }
- }
+}

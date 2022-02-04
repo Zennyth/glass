@@ -14,26 +14,48 @@
   --dropdown-bg: #21242d;
   --dropdown-hover: rgb(42 46 60);
   --popup-bg: rgb(22 25 37);
-  --search-bg:  #14162b;
+  --search-bg: #14162b;
   --overlay-bg: rgba(36, 39, 59, 0.3);
   --scrollbar-bg: rgb(1 2 3 / 40%);
 }
 
 .light-mode {
   --theme-bg-color: rgb(255 255 255 / 31%);
- --theme-color: #3c3a3a;
- --inactive-color: #333333;
+  --theme-color: #3c3a3a;
+  --inactive-color: #333333;
   --button-inactive: #3c3a3a;
- --search-bg: rgb(255 255 255 / 31%);
- --dropdown-bg: #f7f7f7;
- --overlay-bg: rgb(255 255 255 / 30%);
- --dropdown-hover: rgb(236 236 236);
- --border-color: rgb(255 255 255 / 35%);
- --popup-bg: rgb(255 255 255);
- --hover-menu-bg: rgba(255 255 255 / 35%);
- --scrollbar-bg: rgb(255 253 253 / 57%);
- --content-title-color: --theme-color;
+  --search-bg: rgb(255 255 255 / 31%);
+  --dropdown-bg: #f7f7f7;
+  --overlay-bg: rgb(255 255 255 / 30%);
+  --dropdown-hover: rgb(236 236 236);
+  --border-color: rgb(255 255 255 / 35%);
+  --popup-bg: rgb(255 255 255);
+  --hover-menu-bg: rgba(255 255 255 / 35%);
+  --scrollbar-bg: rgb(255 253 253 / 57%);
+  --content-title-color: --theme-color;
 }
+
+$transparent-bg: transparent !default;
+
+$default: #344675 !default;
+$primary: #3a6df0 !default;
+$secondary: #f4f5f7 !default;
+$success: #00f2c3 !default;
+$info: #1d8cf8 !default;
+$warning: #ff8d72 !default;
+$danger: #fd5d93 !default;
+$black: #222a42 !default;
+$vue: #42b883 !default;
+
+// gradient
+$default-states: #263148 !default;
+$primary-states: #2955c5 !default;
+$success-states: #0098f0 !default;
+$info-states: #3358f4 !default;
+$warning-states: #ff6491 !default;
+$danger-states: #ec250d !default;
+$black-states: #1d253b !default;
+$vue-states: #389466 !default;
 
 // breakpoints
 :root {

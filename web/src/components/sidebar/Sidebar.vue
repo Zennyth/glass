@@ -1,7 +1,6 @@
 <template>
-  <div class="sidebar" :class="{visible: isVisible}">
+  <div class="sidebar">
     <div class="sidebar-wrapper">
-      <div class="sidebar-title">Apps</div>
       <div class="sidebar-menu">
         <slot name="links">
           <sidebar-link
@@ -10,6 +9,7 @@
             :to="link.path"
             :name="link.name"
             :icon="link.icon"
+            :group="link.group"
           >
           </sidebar-link>
         </slot>
@@ -18,7 +18,6 @@
   </div>
 </template>
 <script>
-
 export default {
   props: {
     title: {
@@ -52,9 +51,6 @@ export default {
         .join("")
         .toUpperCase();
     },
-    isVisible() {
-      return this.$store.getters["isVisible"]
-    }
   },
   data() {
     return {
